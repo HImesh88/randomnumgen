@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    padding-top: 40px; 
+}
+
+#main {
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 40px 50px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    margin-top: 20px; 
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: 2px solid #333;
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: #009688;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 150, 136, 0.5);
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #009688;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #00796b;
+    transform: scale(1.05); 
+}
+
+button:active {
+    background-color: #004d40;
+    transform: scale(1);
+}
+
+button:focus {
+    outline: none;
+    border: 2px solid #00bfae;
+}
+
+#numbersec {
+    margin-top: 20px;
+}
+
+.num {
+    background-color: #2a2a2a;
+    padding: 15px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 10px;
+    display: inline-block;
+    min-width: 100px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #main {
+        padding: 30px 20px;
+        max-width: 90%;
+    }
+
+    #main h2 {
+        font-size: 22px;
+    }
+
+    .num {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #main {
+        padding: 20px 15px;
+    }
+
+    input[type="number"] {
+        padding: 10px;
+    }
+
+    .num {
+        font-size: 14px;
+    }
+}
