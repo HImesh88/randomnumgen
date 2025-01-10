@@ -1,13 +1,11 @@
-
 let generatedNumbers = [];
 
 document.getElementById('genbtn').addEventListener('click', function () {
-
     let startValue = parseInt(document.getElementById('startvalue').value);
     let endValue = parseInt(document.getElementById('endvalue').value);
 
     if (isNaN(startValue) || isNaN(endValue) || startValue >= endValue) {
-        document.querySelector('.num').textContent = 'Please enter valid numbers!';
+        document.getElementById('announcement').textContent = 'Please enter valid numbers!';
         return;
     }
 
@@ -23,26 +21,31 @@ document.getElementById('genbtn').addEventListener('click', function () {
         let randomNumber = possibleNumbers[randomIndex];
 
         generatedNumbers.push(randomNumber);
-        document.querySelector('.num').textContent = randomNumber;
+        document.getElementById('number-display').textContent = randomNumber;
+        document.getElementById('announcement').textContent = '';
     } else {
-        document.querySelector('.num').textContent = 'All numbers have been generated.';
+        document.getElementById('number-display').textContent = '-';
+        document.getElementById('announcement').textContent = 'All numbers have been generated.';
     }
-
     document.getElementById('startvalue').style.padding= "5px"
     document.getElementById('endvalue').style.padding= "5px"
     document.getElementById('endvalue').style.margin= "10px 0px"
     document.getElementById('startvalue').style.margin= "10px 0px"
+    document.getElementById('number-display').style.fontSize="45px"
+    document.getElementById('number-display').style.color="#9400D3"
 });
 
-//reset
+// Reset functionality
 document.getElementById('resetbtn').addEventListener('click', function () {
     document.getElementById('startvalue').value = '';
     document.getElementById('endvalue').value = '';
-    document.querySelector('.num').textContent = 'Number will appear here';
-    generatedNumbers = [];
+    document.getElementById('number-display').textContent = 'Number will appear here';
+    document.getElementById('announcement').textContent = '';
     document.getElementById('startvalue').style.padding= "12px"
     document.getElementById('endvalue').style.padding= "12px"
     document.getElementById('endvalue').style.margin= "15px 0px"
     document.getElementById('startvalue').style.margin= "15px 0px"
+    document.getElementById('number-display').style.fontSize="20px"
+    document.getElementById('number-display').style.color=""
+    generatedNumbers = [];
 });
-
